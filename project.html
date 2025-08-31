@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Africa Geospatial</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: #432222;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      overflow-x: hidden;
+      font-family: Arial, sans-serif;
+    }
+
+    /* ====== Blurred Background Layer ====== */
+    .blurred-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0; /* stays behind */
+      overflow: hidden;
+    }
+
+    .blur-img {
+      position: absolute;
+      width: 650px;
+      height: 300px;
+      object-fit: cover;
+      filter: blur(12px);
+      opacity: 1;
+      mix-blend-mode: lighten;
+    }
+
+    .top-left { top: 0; left: 0; }
+    .top-right { top: 0; right: 0; }
+    .bottom-left { bottom: 0; left: 0; }
+    .bottom-right { bottom: 0; right: 0; }
+
+    /* ====== Navbar ====== */
+    .navbar {
+      width: 100%;
+      max-width: 1200px;
+      height: 75px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      z-index: 3;
+      position: relative;
+    }
+
+    .logo {
+      color: white;
+      font-size: 35px;
+      font-weight: bold;
+    }
+
+    .menu ul {
+      display: flex;
+      gap: 40px;
+    }
+
+    .menu ul li {
+      list-style: none;
+    }
+
+    .menu ul li a {
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .menu ul li a:hover {
+      color: #ff7200;
+    }
+
+    .search {
+      display: flex;
+      align-items: center;
+    }
+
+    .srch {
+      width: 200px;
+      height: 40px;
+      border: 1px solid #070413;
+      padding: 10px;
+      font-size: 16px;
+      border-radius: 5px 0 0 5px;
+    }
+
+    .btn {
+      height: 40px;
+      background: #ff7200;
+      border: none;
+      padding: 0 20px;
+      border-radius: 0 5px 5px 0;
+      cursor: pointer;
+      color: #fff;
+      font-size: 15px;
+    }
+
+    .btn:hover {
+      background: #fff;
+      color: #000;
+    }
+
+    /* ====== Africa Map Section ====== */
+    .africa-map {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      margin-top: 50px;
+    }
+
+    .main-img {
+      max-width: 700px;
+      height: auto;
+    }
+     .banner-text{
+          
+            top: 0%;
+            color: #eebdbd;
+            z-index: 1;
+            font-size: 25px;
+            font-style: italic;
+            font-weight: bold;
+            }
+
+    /* ====== Text Content ====== */
+    .map-and-list {
+    display: flex;
+    align-items: flex-start; /* aligns top of list with map */
+    gap: 40px;               /* space between list and map */
+    margin-top: 20px;
+    
+}
+
+.bullets ul {
+    list-style: disc;
+    padding-left: 20px;
+    margin: 0;
+    
+}
+
+.bullets ul li {
+   
+    font-size: 16px;
+    margin-bottom: 10px;
+    line-height: 1.5;
+    text-align: left;
+}
+
+.map-container {
+    flex-shrink: 0; /* prevents shrinking map */
+}
+
+
+    .cn {
+      display:inline-block;
+      margin-top: 20px;
+      padding: 10px 20px;
+      background: #ff7200;
+      color: #000;
+      border-radius: 10px;
+      text-decoration: none;
+      font-size: 18px;
+      transition: 0.3s;
+    }
+   .content-row {
+  display: flex;
+  align-items: flex-start;  
+  gap: 40px;                
+  margin-top: 20px;
+}
+
+.bullets ul {
+  list-style: disc;
+  margin: 0;
+  padding-left: 20px;
+}
+
+.bullets ul li {
+  color: #fff;
+  font-size: 16px;
+  margin-bottom: 10px;
+  line-height: 1.5;
+  text-align: left;  
+}
+
+.map-container {
+  flex-shrink: 0;  
+}
+
+    .cn:hover {
+      background: #fff;
+      color: #000;
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- Blurred Background -->
+  <div class="blurred-bg">
+    <img src="c:\Users\DELL\Downloads\Telegram Desktop\img2.jpg" class="blur-img bottom-left" alt="">
+    <img src="c:\Users\DELL\Downloads\Telegram Desktop\img3.jpg" class="blur-img top-right" alt="">
+    <img src="c:\Users\DELL\Pictures\image of africa - Google Search_files\istockphoto-174903692-1024x1024.jpg" class="blur-img top-left" class="blur-img top-left" alt="">
+    <img src="c:\Users\DELL\Pictures\image of africa - Google Search_files\maps.jpg" class="blur-img bottom-right" alt="">
+  </div>
+
+  <!-- Navbar -->
+  <div class="navbar">
+    <div class="logo">ISS</div>
+    <div class="menu">
+      <ul>
+        <li><a href="#">HOME</a></li>
+        <li><a href="#">ABOUT</a></li>
+        <li><a href="#">SERVICE</a></li>
+        <li><a href="#">CONTACT</a></li>
+      </ul>
+    </div>
+    <div class="search">
+      <input class="srch" type="search" placeholder="Type to text">
+      <button class="btn">Search</button>
+    </div>
+  </div>
+
+  <!-- Africa Map -->
+  <div class="africa-map">
+    <h1 class="banner-text">Geospatial Service Providers in Africa</h1>
+    
+
+    <div class="map-and-list">
+    <!-- Left: Bullet list -->
+    <div class="bullets">
+        <ul>
+            <li>Collecting data from satellites, drones, GPS devices, sensors, surveys, or maps.</li>
+            <li>Processing and storing it in specialized formats (GIS layers, shapefiles, GeoJSON)</li>
+            <li>Analyzing spatial relationships (e.g., finding the shortest route, mapping flood risk zones).</li>
+            <li>Visualizing results through interactive maps, 3D models, or dashboards.</li>
+            <li>Delivering insights for decision-making</li>
+        </ul>
+        <!-- Right: Africa Map -->
+  <div class="map-container">
+ <img src="c:\Users\DELL\Desktop\Geographic-map-of-Ethiopia-that-shows-regions-and-chartered-cities-removebg-preview.png" alt="Africa Map" usemap="#africa-map" class="main-img">
+    
+    </div>
+
+  
+  </div>
+</div>
+   
+  
+
+</body>
+</html>
